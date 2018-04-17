@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Store Your Data</h1><br>
+  <input type="text" id="newval" />
+  <a href="#" onclick="storeData()" class="btn btn-primary" >Store</a>
+</body>
+<script>
+
+import voting_artifacts from '../../build/contracts/Data.json'
+
+var Voting = contract(voting_artifacts);
+
+var dataVal = $("#newval").val();
+
+
+function storeData()
+{
+
+
+
+
+ var message = document.getElementById("newval").value;
+ alert("New Data Added "+message);
+ contractInstance.storeData(dataval, {from: web3.eth.accounts[0]},);
+ 
+ Data.deployed().then(function(contractInstance) {
+      contractInstance.voteForCandidate(candidateName, {gas: 140000, from: web3.eth.accounts[0]}).then(function()
+}
+</script>
+
+</html>
